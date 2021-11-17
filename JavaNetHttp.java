@@ -12,7 +12,6 @@ public class JavaNetHttp {
                 .headers("host", "some-host")
                 .build();
             System.out.println("Hello, http-request!");
-            System.exit(1);
         } catch(Throwable t) {
             System.err.println(t.getMessage());
         }
