@@ -4,6 +4,8 @@ This is an example showing how graalvm native-image does not respect
 the `jdk.httpclient.allowRestrictedHeaders` system property used by
 java.net.http.HttpRequest.
 
+Prepared for https://github.com/oracle/graal/issues/4027
+
 ## Background
 
 The [`java.net.http.HttpRequest$Builder` `header`
@@ -12,8 +14,8 @@ HttpRequest per RFC 7230. As of JDK12, this can be overridden by
 setting the `jdk.httpclient.allowRestrictedHeaders` system
 property. See the following resolved JDK tickets for details.
 
-* [Make restricted headers in HTTP Client configurable and remove Date by default](https://bugs.openjdk.java.net/browse/JDK-8213189)
-* [Make restricted headers in HTTP Client configurable and remove Date by default](https://bugs.openjdk.java.net/browse/JDK-8213696)
+* [JDK-8213189 - Make restricted headers in HTTP Client configurable and remove Date by default](https://bugs.openjdk.java.net/browse/JDK-8213189)
+* [JDK-8213696 - Make restricted headers in HTTP Client configurable and remove Date by default](https://bugs.openjdk.java.net/browse/JDK-8213696)
 
 OpenJDK17 and the JDK included with the GraalVM distribution
 respect this property, allowing the setting of otherwise-restricted
